@@ -8,6 +8,135 @@ body {
     overflow-x: hidden;
 }
 
+@media (max-width: 1366px) {
+    .main-section .title h1 {
+        font-size: 60px;
+    }
+
+    .main-section .title h2 {
+        font-size: 28px;
+    }
+
+    .card {
+        width: 300px;
+    }
+
+    .stack-content p {
+        font-size: 30px;
+    }
+
+    .icons img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Адаптивность для экранов 1024px и меньше */
+@media (max-width: 1024px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .contacts-content {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .stack-section h1 {
+        font-size: 40px;
+        padding-left: 100px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+}
+
+/* Адаптивность для экранов 768px и меньше */
+@media (max-width: 768px) {
+    .main-section .title h1 {
+        font-size: 50px;
+    }
+
+    .main-section .title h2 {
+        font-size: 24px;
+        padding-left: 50px;
+    }
+
+    .card {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .stack-content p {
+        font-size: 25px;
+    }
+
+    .icons img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Адаптивность для экранов 480px и меньше */
+@media (max-width: 480px) {
+    nav ul li a {
+        padding: 8px 15px;
+    }
+
+    .main-section .title h1 {
+        font-size: 40px;
+    }
+
+    .main-section .title h2 {
+        font-size: 20px;
+        padding-left: 30px;
+    }
+
+    .about-section img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .contacts-content {
+        padding: 0 20px;
+    }
+
+    .card img {
+        height: 200px;
+    }
+
+    .icons img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Адаптивность для экранов 360px и меньше */
+@media (max-width: 360px) {
+    .main-section .title h1 {
+        font-size: 35px;
+    }
+
+    .main-section .title h2 {
+        font-size: 18px;
+        padding-left: 20px;
+    }
+
+    .scroll-down,
+    .year {
+        font-size: 16px;
+    }
+
+    .about-section p {
+        font-size: 18px;
+    }
+
+    .stack-content p {
+        font-size: 20px;
+    }
+}
+
 nav {
     background-color: #000;
     padding: 10px 30px;
