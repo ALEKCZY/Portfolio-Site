@@ -189,12 +189,24 @@
         });
     </script>
 
-    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
     <script type="module">
-        import { createClient } from 'jsr:@supabase/supabase-js@2'
-        const SUPABASE_URL = 'https://swmdkpythjvvbynkqepi.supabase.co';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN3bWRrcHl0aGp2dmJ5bmtxZXBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzE0OTMzNTQsImV4cCI6MjA0NzA2OTM1NH0.uslOGnfbfR-NMMcOXkSfJmjSIhH5FioiNM9nqT2WRjI';
-        const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDfSBQKMxQsGZfFuxXds689WQublKlXzck",
+            authDomain: "portfolio-e0559.firebaseapp.com",
+            projectId: "portfolio-e0559",
+            storageBucket: "portfolio-e0559.firebasestorage.app",
+            messagingSenderId: "160372956760",
+            appId: "1:160372956760:web:3a3e116d1ce4129cd4f42d",
+            measurementId: "G-ZC7HSXKDXY"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getFirestore(app);
 
         document.getElementById("feedbackForm").addEventListener("submit", async function (event) {
             event.preventDefault();
@@ -203,19 +215,20 @@
             const email = document.getElementById("email").value;
             const message = document.getElementById("message").value;
 
-            const { data, error } = await supabase
-                .from('Feedback')
-                .insert([
-                    { name: name, email: email, text: message }
-                ]);
+            try {
+                await addDoc(collection(db, "feedback"), {
+                    name: name,
+                    email: email,
+                    message: message,
+                    timestamp: new Date()
+                });
 
-            if (error) {
-                console.error("Error sending data:", error);
-                alert("An error occurred when sending data. Try again.");
-            } else {
-                alert("Thank you for your message!");
+                alert("Обратная связь успешно отправлена!");
                 document.getElementById("feedbackForm").reset();
-                document.getElementById("feedbackModal").style.display = "none";
+                feedbackModal.style.display = "none";
+            } catch (e) {
+                console.error("Ошибка при добавлении документа: ", e);
+                alert("Произошла ошибка при отправке обратной связи.");
             }
         });
     </script>
