@@ -1,4 +1,4 @@
-/* Основные стили */
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -8,17 +8,13 @@ body {
     overflow-x: hidden;
 }
 
-/* Мобильные устройства (от 360 до 767 пикселей) */
 @media (max-width: 767px) {
-    nav ul {
-        display: none;
+    nav {
+        display: none !important;
     }
 
     .main-section {
-        background-image: url('files/bust.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center -50px;
+        background-color: #000;
         height: 150vh;
         position: relative;
         margin: 0;
@@ -28,7 +24,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
         transition: all 1.5s ease-in-out;
-        text-align: center; /* Центрируем все содержимое */
+        text-align: center;
     }
 
         .main-section.loaded {
@@ -36,32 +32,48 @@ body {
             transform: translateY(0);
         }
 
-        .main-section .title {
-            position: relative; /* Сместим относительно секции */
-            top: 20px;
-            text-align: center; /* Центрируем заголовок */
+    .bust-image {
+        max-width: 100%;
+        height: auto;
+        margin-top: 0;
+    }
+
+    .main-section .title {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        z-index: 10;
+    }
+
+        .main-section .title h1 {
+            font-size: 70px;
+            margin: 0;
+            font-weight: bold;
+            line-height: 1;
         }
 
-            .main-section .title h1 {
-                font-size: 40px;
-                margin: 0;
-                font-weight: bold;
-                line-height: 1;
-            }
+        .main-section .title h2 {
+            font-size: 30px;
+            margin: 0;
+            font-style: italic;
+        }
 
-            .main-section .title h2 {
-                font-size: 20px;
-                margin: 0;
-                font-style: italic;
-            }
-
-    .scroll-down, .year {
-        font-size: 14px;
+    .scroll-down {
         position: absolute;
+        right: 20px;
         bottom: 50px;
-        width: 100%;
-        text-align: center;
+        font-size: 18px;
     }
+
+    .year {
+        position: absolute;
+        left: 20px;
+        bottom: 50px;
+        font-size: 18px;
+    }
+
 
     .about-section img {
         width: 150px;
@@ -110,7 +122,6 @@ body {
     }
 }
 
-/* Планшеты и небольшие экраны (768 до 1024 пикселей) */
 @media (min-width: 768px) and (max-width: 1024px) {
     .main-section .title h1 {
         font-size: 60px;
@@ -148,7 +159,6 @@ body {
     }
 }
 
-/* Настольные устройства и большие экраны (от 1025 пикселей) */
 @media (min-width: 1025px) {
     .main-section .title h1 {
         font-size: 80px;
@@ -221,10 +231,6 @@ nav {
 
 .main-section {
     background-color: #000;
-    background-image: url('files/bust.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center -50px;
     height: 150vh;
     position: relative;
     margin: 0;
@@ -234,12 +240,19 @@ nav {
     opacity: 0;
     transform: translateY(20px);
     transition: all 1.5s ease-in-out;
+    text-align: center;
 }
 
     .main-section.loaded {
         opacity: 1;
         transform: translateY(0);
     }
+
+.bust-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: -50px;
+}
 
     .main-section .title {
         position: absolute;
