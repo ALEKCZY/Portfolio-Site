@@ -13,68 +13,6 @@ body {
         display: none !important;
     }
 
-    .main-section {
-        background-color: #000;
-        height: 150vh;
-        position: relative;
-        margin: 0;
-        padding: 0;
-        left: 0;
-        top: 0;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 1.5s ease-in-out;
-        text-align: center;
-    }
-
-        .main-section.loaded {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-    .bust-image {
-        max-width: 100%;
-        height: auto;
-        margin-top: 0;
-    }
-
-    .main-section .title {
-        position: absolute;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-        z-index: 10;
-    }
-
-        .main-section .title h1 {
-            font-size: 70px;
-            margin: 0;
-            font-weight: bold;
-            line-height: 1;
-        }
-
-        .main-section .title h2 {
-            font-size: 30px;
-            margin: 0;
-            font-style: italic;
-        }
-
-    .scroll-down {
-        position: absolute;
-        right: 20px;
-        bottom: 50px;
-        font-size: 18px;
-    }
-
-    .year {
-        position: absolute;
-        left: 20px;
-        bottom: 50px;
-        font-size: 18px;
-    }
-
-
     .about-section img {
         width: 150px;
         height: 150px;
@@ -103,12 +41,11 @@ body {
     }
 
     .stack-content p, .contacts-content p {
-        font-size: 18px;
+        font-size: 25px !important;
     }
 
     .icons img {
-        width: 100px;
-        height: 100px;
+        display: none !important;
     }
 
     .contacts-content {
@@ -230,13 +167,15 @@ nav {
                 }
 
 .main-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: #000;
     height: 150vh;
     position: relative;
     margin: 0;
     padding: 0;
-    left: 0;
-    top: 0;
     opacity: 0;
     transform: translateY(20px);
     transition: all 1.5s ease-in-out;
@@ -249,8 +188,10 @@ nav {
     }
 
 .bust-image {
-    max-width: 100%;
+    width: 100%;
+    max-width: 800px; /* Максимальный размер для больших экранов */
     height: auto;
+    object-fit: cover;
     margin-top: -50px;
 }
 
@@ -275,21 +216,9 @@ nav {
             padding-left: 75px;
         }
 
-.scroll-down {
-    position: absolute;
-    right: 20px;
-    bottom: 390px;
+.year, .scroll-down {
     font-size: 18px;
 }
-
-.year {
-    position: absolute;
-    left: 20px;
-    bottom: 390px;
-    font-size: 18px;
-}
-
-
 
 .about-section {
     padding: 100px 50px;
