@@ -1,14 +1,85 @@
+/* Основные стили */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #000;
     color: #fff;
-    height: 100vh;
     padding: 0;
     overflow-x: hidden;
 }
 
-@media (max-width: 1366px) {
+/* Мобильные устройства (от 360 до 767 пикселей) */
+@media (max-width: 767px) {
+    nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .main-section .title h1 {
+        font-size: 40px;
+        left: 10px;
+        top: 100px;
+    }
+
+    .main-section .title h2 {
+        font-size: 20px;
+        padding-left: 20px;
+    }
+
+    .scroll-down, .year {
+        font-size: 14px;
+        bottom: 50px;
+    }
+
+    .about-section img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .about-section h1 {
+        font-size: 30px;
+    }
+
+    .about-section p {
+        font-size: 16px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .stack-section h1, .contacts-section h1 {
+        font-size: 30px;
+    }
+
+    .stack-content p, .contacts-content p {
+        font-size: 18px;
+    }
+
+    .icons img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .contacts-content {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .bottom-info {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Планшеты и небольшие экраны (768 до 1024 пикселей) */
+@media (min-width: 768px) and (max-width: 1024px) {
     .main-section .title h1 {
         font-size: 60px;
     }
@@ -17,12 +88,26 @@ body {
         font-size: 28px;
     }
 
-    .card {
-        width: 300px;
+    .about-section img {
+        width: 200px;
+        height: 200px;
     }
 
-    .stack-content p {
-        font-size: 30px;
+    .container {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .card {
+        width: 45%;
+    }
+
+    .stack-section h1, .contacts-section h1 {
+        font-size: 40px;
+    }
+
+    .stack-content p, .contacts-content p {
+        font-size: 20px;
     }
 
     .icons img {
@@ -31,111 +116,39 @@ body {
     }
 }
 
-/* Адаптивность для экранов 1024px и меньше */
-@media (max-width: 1024px) {
-    nav ul {
-        flex-direction: column;
-    }
-
-    .contacts-content {
-        flex-direction: column;
-        padding: 0;
-    }
-
-    .stack-section h1 {
-        font-size: 40px;
-        padding-left: 100px;
-    }
-
-    .container {
-        flex-direction: column;
-    }
-}
-
-/* Адаптивность для экранов 768px и меньше */
-@media (max-width: 768px) {
+/* Настольные устройства и большие экраны (от 1025 пикселей) */
+@media (min-width: 1025px) {
     .main-section .title h1 {
-        font-size: 50px;
+        font-size: 80px;
     }
 
     .main-section .title h2 {
-        font-size: 24px;
-        padding-left: 50px;
-    }
-
-    .card {
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    .stack-content p {
-        font-size: 25px;
-    }
-
-    .icons img {
-        width: 100px;
-        height: 100px;
-    }
-}
-
-/* Адаптивность для экранов 480px и меньше */
-@media (max-width: 480px) {
-    nav ul li a {
-        padding: 8px 15px;
-    }
-
-    .main-section .title h1 {
-        font-size: 40px;
-    }
-
-    .main-section .title h2 {
-        font-size: 20px;
-        padding-left: 30px;
-    }
-
-    .about-section img {
-        width: 200px;
-        height: 200px;
-    }
-
-    .contacts-content {
-        padding: 0 20px;
-    }
-
-    .card img {
-        height: 200px;
-    }
-
-    .icons img {
-        width: 80px;
-        height: 80px;
-    }
-}
-
-/* Адаптивность для экранов 360px и меньше */
-@media (max-width: 360px) {
-    .main-section .title h1 {
         font-size: 35px;
     }
 
-    .main-section .title h2 {
-        font-size: 18px;
-        padding-left: 20px;
+    .about-section img {
+        width: 250px;
+        height: 250px;
     }
 
-    .scroll-down,
-    .year {
-        font-size: 16px;
+    .card {
+        width: 30%;
     }
 
-    .about-section p {
-        font-size: 18px;
+    .stack-section h1, .contacts-section h1 {
+        font-size: 45px;
     }
 
-    .stack-content p {
-        font-size: 20px;
+    .stack-content p, .contacts-content p {
+        font-size: 24px;
+    }
+
+    .icons img {
+        width: 150px;
+        height: 150px;
     }
 }
+
 
 nav {
     background-color: #000;
