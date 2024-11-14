@@ -52,7 +52,7 @@ document.getElementById("feedbackForm").addEventListener("submit", function (eve
             }
         })
         .catch(error => {
-            console.error("Ошибка:", error);
-            alert("Произошла ошибка при отправке обратной связи.");
+            console.error("Error:", error);
+            alert("An error occurred while sending feedback.");
         });
 });

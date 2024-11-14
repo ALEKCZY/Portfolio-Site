@@ -13,6 +13,14 @@ body {
         display: none !important;
     }
 
+    .main-section .title h1 {
+        font-size: 50px !important;
+    }
+
+    .main-section .title h2 {
+        font-size: 20px!important;
+    }
+
     .about-section img {
         width: 150px;
         height: 150px;
@@ -44,13 +52,20 @@ body {
         font-size: 25px !important;
     }
 
-    .icons img {
-        display: none !important;
+    .contacts-content {
+        flex-direction: column !important; /* Измените направление на колонку для мобильной версии */
+        align-items: center !important; /* Центрируйте элементы по горизонтали */
+        padding: 0 20px !important; /* Уменьшите отступы */
     }
 
-    .contacts-content {
-        flex-direction: column;
-        padding: 0 20px;
+    .left-side, .right-side {
+        display: flex !important; /* Убедитесь, что они остаются в строке */
+        justify-content: center !important; /* Центрируйте изображения в строке */
+        margin: 0 !important; /* Уберите отступы */
+    }
+
+    .center-side {
+        margin-top: 20px !important; /* Добавьте отступ сверху для отделения от левой и правой сторон */
     }
 }
 
@@ -106,6 +121,7 @@ nav {
     transform: translateY(20px);
     transition: all 1.5s ease-in-out;
     text-align: center;
+    padding-bottom: 100px;
 }
 
     .main-section.loaded {
@@ -113,38 +129,28 @@ nav {
         transform: translateY(0);
     }
 
-.bust-image {
-    width: 90%;
-    max-width: 800px; /* Максимальный размер для больших экранов */
-    height: auto;
-    object-fit: cover;
-    margin-top: -50px;
-}
-
-    .main-section .title {
-        position: absolute;
-        top: 150px;
-        left: 100px;
-        text-align: left;
+    .main-section .title h1 {
+        font-size: 70px;
+        margin: 0;
+        font-weight: bold;
+        line-height: 1;
     }
 
-        .main-section .title h1 {
-            font-size: 70px;
-            margin: 0;
-            font-weight: bold;
-            line-height: 1;
-        }
+    .main-section .title h2 {
+        font-size: 30px;
+        margin: 0;
+        font-style: italic;
+        padding-left: 75px;
+    }
 
-        .main-section .title h2 {
-            font-size: 30px;
-            margin: 0;
-            font-style: italic;
-            padding-left: 75px;
-        }
+    .main-section .bust-image {
+        width: 90%;
+        max-width: 800px;
+        height: auto;
+        object-fit: cover;
+        margin: 0 auto 20px auto;
+    }
 
-.year, .scroll-down {
-    font-size: 18px;
-}
 
 .about-section {
     padding: 100px 50px;
@@ -243,11 +249,10 @@ nav {
 }
 
     .stack-section h1 {
-        text-align: left;
+        text-align: center;
         color: #73CE2E;
         margin-bottom: 70px;
         font-size: 45px;
-        padding-left: 200px;
     }
 
 .stack-content {
@@ -265,49 +270,6 @@ nav {
     .stack-content strong {
         color: #73CE2E;
     }
-
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.icons {
-    position: absolute;
-    right: 200px;
-    top: 200px;
-    display: flex;
-    flex-direction: column;
-}
-
-    .icons img {
-        width: 150px;
-        height: 150px;
-        position: relative;
-        animation: rotate 10s linear infinite;
-    }
-
-.icon-python {
-    top: 0;
-    right: 0;
-    transform-origin: center;
-}
-
-.icon-vs {
-    top: 50px;
-    right: 250px;
-    transform-origin: center;
-}
-
-.icon-html {
-    top: 90px;
-    right: -40px;
-    transform-origin: center;
-}
 
 .contacts-section {
     padding: 100px 0;

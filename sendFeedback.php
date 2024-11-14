@@ -29,8 +29,8 @@ $response = curl_exec($ch);
 curl_close($ch);
 
 if ($response) {
-    echo json_encode(['status' => 'success', 'message' => 'Обратная связь успешно отправлена!']);
+    echo json_encode(['status' => 'success', 'message' => 'Feedback successfully sent!']);
 } else {
-    echo json_encode(['status' => 'error', 'message' => 'Произошла ошибка при отправке данных.']);
+    echo json_encode(['status' => 'error', 'message' => 'An error occurred while sending data.']);
 }
 ?>
