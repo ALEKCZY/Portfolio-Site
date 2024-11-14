@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
     <title>Portfolio by Koczy</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -190,49 +190,41 @@
         });
     </script>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
-        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyDfSBQKMxQsGZfFuxXds689WQublKlXzck",
-            authDomain: "portfolio-e0559.firebaseapp.com",
-            projectId: "portfolio-e0559",
-            storageBucket: "portfolio-e0559.firebasestorage.app",
-            messagingSenderId: "160372956760",
-            appId: "1:160372956760:web:3a3e116d1ce4129cd4f42d",
-            measurementId: "G-ZC7HSXKDXY"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        const db = getFirestore(app);
-
-        document.getElementById("feedbackForm").addEventListener("submit", async function (event) {
+    <script>
+        document.getElementById("feedbackForm").addEventListener("submit", function (event) {
             event.preventDefault();
 
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
             const message = document.getElementById("message").value;
 
-            try {
-                await addDoc(collection(db, "feedback"), {
-                    name: name,
-                    email: email,
-                    message: message,
-                    timestamp: new Date()
-                });
+            // Отправка данных через AJAX
+            const formData = new FormData();
+            formData.append("name", name);
+            formData.append("email", email);
+            formData.append("message", message);
 
-                alert("Обратная связь успешно отправлена!");
-                document.getElementById("feedbackForm").reset();
-                feedbackModal.style.display = "none";
-            } catch (e) {
-                console.error("Ошибка при добавлении документа: ", e);
-                alert("Произошла ошибка при отправке обратной связи.");
-            }
+            fetch("sendFeedback.php", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        alert(data.message);
+                        document.getElementById("feedbackForm").reset();
+                        feedbackModal.style.display = "none";
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error("Ошибка:", error);
+                    alert("Произошла ошибка при отправке обратной связи.");
+                });
         });
     </script>
+
 
 
 </body>
