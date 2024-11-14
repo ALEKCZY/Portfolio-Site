@@ -8,7 +8,7 @@ body {
     overflow-x: hidden;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     nav {
         display: none !important;
     }
@@ -51,80 +51,6 @@ body {
     .contacts-content {
         flex-direction: column;
         padding: 0 20px;
-    }
-
-    .bottom-info {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-    .main-section .title h1 {
-        font-size: 60px;
-    }
-
-    .main-section .title h2 {
-        font-size: 28px;
-    }
-
-    .about-section img {
-        width: 200px;
-        height: 200px;
-    }
-
-    .container {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    .card {
-        width: 45%;
-    }
-
-    .stack-section h1, .contacts-section h1 {
-        font-size: 40px;
-    }
-
-    .stack-content p, .contacts-content p {
-        font-size: 20px;
-    }
-
-    .icons img {
-        width: 120px;
-        height: 120px;
-    }
-}
-
-@media (min-width: 1025px) {
-    .main-section .title h1 {
-        font-size: 80px;
-    }
-
-    .main-section .title h2 {
-        font-size: 35px;
-    }
-
-    .about-section img {
-        width: 250px;
-        height: 250px;
-    }
-
-    .card {
-        width: 30%;
-    }
-
-    .stack-section h1, .contacts-section h1 {
-        font-size: 45px;
-    }
-
-    .stack-content p, .contacts-content p {
-        font-size: 24px;
-    }
-
-    .icons img {
-        width: 150px;
-        height: 150px;
     }
 }
 
@@ -188,7 +114,7 @@ nav {
     }
 
 .bust-image {
-    width: 100%;
+    width: 90%;
     max-width: 800px; /* Максимальный размер для больших экранов */
     height: auto;
     object-fit: cover;
