@@ -399,10 +399,6 @@ nav {
         display: none !important;
     }
 
-    .main-section {
-        height: 50vh;
-    }
-
     .main-section .title h1 {
         font-size: 50px !important;
     }
