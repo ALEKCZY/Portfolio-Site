@@ -8,68 +8,6 @@ body {
     overflow-x: hidden;
 }
 
-@media (max-width: 768px) {
-    nav {
-        display: none !important;
-    }
-
-    .main-section .title h1 {
-        font-size: 50px !important;
-    }
-
-    .main-section .title h2 {
-        font-size: 20px!important;
-    }
-
-    .about-section img {
-        width: 150px;
-        height: 150px;
-    }
-
-    .about-section h1 {
-        font-size: 30px;
-    }
-
-    .about-section p {
-        font-size: 16px;
-    }
-
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        width: 90%;
-        margin-bottom: 20px;
-    }
-
-    .stack-section h1, .contacts-section h1 {
-        font-size: 30px;
-    }
-
-    .stack-content p, .contacts-content p {
-        font-size: 25px !important;
-    }
-
-    .contacts-content {
-        flex-direction: column !important; /* Измените направление на колонку для мобильной версии */
-        align-items: center !important; /* Центрируйте элементы по горизонтали */
-        padding: 0 20px !important; /* Уменьшите отступы */
-    }
-
-    .left-side, .right-side {
-        display: flex !important; /* Убедитесь, что они остаются в строке */
-        justify-content: center !important; /* Центрируйте изображения в строке */
-        margin: 0 !important; /* Уберите отступы */
-    }
-
-    .center-side {
-        margin-top: 20px !important; /* Добавьте отступ сверху для отделения от левой и правой сторон */
-    }
-}
-
-
 nav {
     background-color: #000;
     padding: 10px 30px;
@@ -292,7 +230,7 @@ nav {
     padding: 0 100px;
 }
 
-.left-side, .right-side, .center-side {
+.left-side, .center-side {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -433,13 +371,13 @@ nav {
 }
 
 .modal-content {
-    background-color: #333;
+    background-color: #000;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
     max-width: 500px;
-    color: #fff;
+    color: #73CE2E;
 }
 
 .close {
@@ -454,3 +392,69 @@ nav {
         color: #f00;
         cursor: pointer;
     }
+
+
+@media (max-width: 768px) {
+    nav {
+        display: none !important;
+    }
+
+    .main-section {
+        height: 50vh;
+    }
+
+    .main-section .title h1 {
+        font-size: 50px !important;
+    }
+
+    .main-section .title h2 {
+        font-size: 20px !important;
+    }
+
+    .about-section img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .about-section h1 {
+        font-size: 30px;
+    }
+
+    .about-section p {
+        font-size: 16px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .stack-section h1, .contacts-section h1 {
+        font-size: 30px;
+    }
+
+    .stack-content p, .contacts-content p {
+        font-size: 25px;
+    }
+
+    .contacts-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .left-side, .right-side {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .center-side {
+        margin-top: 20px;
+    }
+}
