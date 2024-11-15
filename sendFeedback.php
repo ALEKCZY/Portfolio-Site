@@ -1,8 +1,5 @@
 <?php
-$firebaseUrl = 'https://firestore.googleapis.com/v1/projects/portfolio-e0559/databases/feedback/documents/feedback';
-header('Content-Type: application/json'); // Устанавливаем правильный заголовок
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+$firebaseUrl = 'https://portfolio-e0559.firebaseio.com/feedback.json';
 
 $name = isset($_POST['name']) ? $_POST['name'] : '';
 $email = isset($_POST['email']) ? $_POST['email'] : '';

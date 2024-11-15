@@ -43,7 +43,6 @@ document.getElementById("feedbackForm").addEventListener("submit", function (eve
     })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             if (data.status === 'success') {
                 alert(data.message);
                 document.getElementById("feedbackForm").reset();
